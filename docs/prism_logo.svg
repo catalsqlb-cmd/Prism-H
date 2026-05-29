@@ -1,125 +1,45 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 100">
+  <defs>
+    <!-- Spectrum gradient: white light split into its colours -->
+    <linearGradient id="spectrum" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"  stop-color="#e23b3b"/>
+      <stop offset="17%" stop-color="#f08a24"/>
+      <stop offset="34%" stop-color="#f5c518"/>
+      <stop offset="50%" stop-color="#4caf50"/>
+      <stop offset="67%" stop-color="#22b8cf"/>
+      <stop offset="84%" stop-color="#4a9eda"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <!-- Glass body of the prism -->
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"  stop-color="#ffffff" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#cfe2f3" stop-opacity="0.55"/>
+    </linearGradient>
+  </defs>
+
   <!-- Light background -->
   <rect width="480" height="100" fill="#fafbfc" rx="10"/>
 
-  <!-- ═══ CC Character (exact hero style) ═══ -->
-  <g transform="translate(12,4) scale(0.85)">
-    <!-- Hair (#8B5E3C) -->
-    <rect x="20" y="42" width="7" height="7" fill="#8B5E3C"/>
-    <rect x="27" y="42" width="7" height="7" fill="#8B5E3C"/>
-    <rect x="34" y="42" width="7" height="7" fill="#8B5E3C"/>
-    <rect x="41" y="42" width="7" height="7" fill="#8B5E3C"/>
-    <rect x="13" y="49" width="7" height="7" fill="#8B5E3C"/>
-    <rect x="20" y="49" width="7" height="7" fill="#8B5E3C"/>
-    <rect x="27" y="49" width="7" height="7" fill="#8B5E3C"/>
-    <rect x="34" y="49" width="7" height="7" fill="#8B5E3C"/>
-    <rect x="41" y="49" width="7" height="7" fill="#8B5E3C"/>
-    <rect x="48" y="49" width="7" height="7" fill="#8B5E3C"/>
-    <!-- Face -->
-    <rect x="13" y="56" width="7" height="7" fill="#FFDAB9"/>
-    <rect x="20" y="56" width="7" height="7" fill="#FFDAB9"/>
-    <rect x="27" y="56" width="7" height="7" fill="#FFDAB9"/>
-    <rect x="34" y="56" width="7" height="7" fill="#FFDAB9"/>
-    <rect x="41" y="56" width="7" height="7" fill="#FFDAB9"/>
-    <rect x="48" y="56" width="7" height="7" fill="#FFDAB9"/>
-    <!-- Eyes -->
-    <rect x="13" y="63" width="7" height="7" fill="#FFDAB9"/>
-    <rect x="20" y="63" width="7" height="7" fill="#333"/>
-    <rect x="27" y="63" width="7" height="7" fill="#FFDAB9"/>
-    <rect x="34" y="63" width="7" height="7" fill="#FFDAB9"/>
-    <rect x="41" y="63" width="7" height="7" fill="#333"/>
-    <rect x="48" y="63" width="7" height="7" fill="#FFDAB9"/>
-    <!-- Mouth -->
-    <rect x="13" y="70" width="7" height="7" fill="#FFDAB9"/>
-    <rect x="20" y="70" width="7" height="7" fill="#FFDAB9"/>
-    <rect x="27" y="70" width="7" height="7" fill="#E8967A"/>
-    <rect x="34" y="70" width="7" height="7" fill="#E8967A"/>
-    <rect x="41" y="70" width="7" height="7" fill="#FFDAB9"/>
-    <rect x="48" y="70" width="7" height="7" fill="#FFDAB9"/>
-    <!-- Body (blue) + hands -->
-    <rect x="6" y="77" width="7" height="7" fill="#FFDAB9"/>
-    <rect x="13" y="77" width="7" height="7" fill="#4A9EDA"/>
-    <rect x="20" y="77" width="7" height="7" fill="#4A9EDA"/>
-    <rect x="27" y="77" width="7" height="7" fill="#4A9EDA"/>
-    <rect x="34" y="77" width="7" height="7" fill="#4A9EDA"/>
-    <rect x="41" y="77" width="7" height="7" fill="#4A9EDA"/>
-    <rect x="48" y="77" width="7" height="7" fill="#4A9EDA"/>
-    <rect x="55" y="77" width="7" height="7" fill="#FFDAB9"/>
-    <rect x="13" y="84" width="7" height="7" fill="#4A9EDA"/>
-    <rect x="20" y="84" width="7" height="7" fill="#4A9EDA"/>
-    <rect x="27" y="84" width="7" height="7" fill="#4A9EDA"/>
-    <rect x="34" y="84" width="7" height="7" fill="#4A9EDA"/>
-    <rect x="41" y="84" width="7" height="7" fill="#4A9EDA"/>
-    <rect x="48" y="84" width="7" height="7" fill="#4A9EDA"/>
-    <!-- Legs -->
-    <rect x="16" y="91" width="7" height="7" fill="#444"/>
-    <rect x="23" y="91" width="7" height="7" fill="#444"/>
-    <rect x="37" y="91" width="7" height="7" fill="#444"/>
-    <rect x="44" y="91" width="7" height="7" fill="#444"/>
+  <!-- ═══ Incoming white light ray ═══ -->
+  <line x1="16" y1="52" x2="80" y2="52" stroke="#aab4be" stroke-width="3" stroke-linecap="round"/>
+  <line x1="16" y1="52" x2="80" y2="52" stroke="#ffffff" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- ═══ Triangular prism ═══ -->
+  <polygon points="90,24 64,74 116,74" fill="url(#glass)" stroke="#b9c6d4" stroke-width="1.5" stroke-linejoin="round"/>
+
+  <!-- ═══ Refracted spectrum fanning from the exit face ═══ -->
+  <g stroke-width="3.4" stroke-linecap="round" opacity="0.9">
+    <line x1="106" y1="54" x2="219" y2="22" stroke="#e23b3b"/>
+    <line x1="106" y1="54" x2="221" y2="32" stroke="#f08a24"/>
+    <line x1="106" y1="54" x2="223" y2="42" stroke="#f5c518"/>
+    <line x1="106" y1="54" x2="224" y2="52" stroke="#4caf50"/>
+    <line x1="106" y1="54" x2="223" y2="62" stroke="#22b8cf"/>
+    <line x1="106" y1="54" x2="221" y2="72" stroke="#4a9eda"/>
+    <line x1="106" y1="54" x2="219" y2="82" stroke="#8b5cf6"/>
   </g>
 
-  <!-- ═══ Prism text + tagline (center) ═══ -->
-  <text x="240" y="44" text-anchor="middle" fill="#333" font-family="monospace" font-size="32" font-weight="bold" letter-spacing="6">Prism</text>
-  <text x="241" y="72" text-anchor="middle" font-family="monospace" font-size="9"><tspan fill="#4A9EDA">Claude Code</tspan><tspan fill="#888"> × </tspan><tspan fill="#74AA63">GPT-5.4 xhigh</tspan></text>
-  <text x="241" y="86" text-anchor="middle" fill="#aaa" font-family="monospace" font-size="8">speed × rigor</text>
-
-  <!-- ═══ GPT Character (exact hero style, glasses) ═══ -->
-  <g transform="translate(398,4) scale(0.85)">
-    <!-- Hair (#2C2C2C) -->
-    <rect x="20" y="42" width="7" height="7" fill="#2C2C2C"/>
-    <rect x="27" y="42" width="7" height="7" fill="#2C2C2C"/>
-    <rect x="34" y="42" width="7" height="7" fill="#2C2C2C"/>
-    <rect x="41" y="42" width="7" height="7" fill="#2C2C2C"/>
-    <rect x="13" y="49" width="7" height="7" fill="#2C2C2C"/>
-    <rect x="20" y="49" width="7" height="7" fill="#2C2C2C"/>
-    <rect x="27" y="49" width="7" height="7" fill="#2C2C2C"/>
-    <rect x="34" y="49" width="7" height="7" fill="#2C2C2C"/>
-    <rect x="41" y="49" width="7" height="7" fill="#2C2C2C"/>
-    <rect x="48" y="49" width="7" height="7" fill="#2C2C2C"/>
-    <!-- Face -->
-    <rect x="13" y="56" width="7" height="7" fill="#FFDAB9"/>
-    <rect x="20" y="56" width="7" height="7" fill="#FFDAB9"/>
-    <rect x="27" y="56" width="7" height="7" fill="#FFDAB9"/>
-    <rect x="34" y="56" width="7" height="7" fill="#FFDAB9"/>
-    <rect x="41" y="56" width="7" height="7" fill="#FFDAB9"/>
-    <rect x="48" y="56" width="7" height="7" fill="#FFDAB9"/>
-    <!-- Eyes -->
-    <rect x="13" y="63" width="7" height="7" fill="#FFDAB9"/>
-    <rect x="20" y="63" width="7" height="7" fill="#333"/>
-    <rect x="27" y="63" width="7" height="7" fill="#FFDAB9"/>
-    <rect x="34" y="63" width="7" height="7" fill="#FFDAB9"/>
-    <rect x="41" y="63" width="7" height="7" fill="#333"/>
-    <rect x="48" y="63" width="7" height="7" fill="#FFDAB9"/>
-    <!-- Glasses -->
-    <rect x="18" y="62" width="13" height="2" fill="#555"/>
-    <rect x="38" y="62" width="13" height="2" fill="#555"/>
-    <rect x="31" y="63" width="7" height="1" fill="#555"/>
-    <!-- Mouth -->
-    <rect x="13" y="70" width="7" height="7" fill="#FFDAB9"/>
-    <rect x="20" y="70" width="7" height="7" fill="#FFDAB9"/>
-    <rect x="27" y="70" width="7" height="7" fill="#D4956A"/>
-    <rect x="34" y="70" width="7" height="7" fill="#D4956A"/>
-    <rect x="41" y="70" width="7" height="7" fill="#FFDAB9"/>
-    <rect x="48" y="70" width="7" height="7" fill="#FFDAB9"/>
-    <!-- Body (green) + hands -->
-    <rect x="6" y="77" width="7" height="7" fill="#FFDAB9"/>
-    <rect x="13" y="77" width="7" height="7" fill="#74AA63"/>
-    <rect x="20" y="77" width="7" height="7" fill="#74AA63"/>
-    <rect x="27" y="77" width="7" height="7" fill="#74AA63"/>
-    <rect x="34" y="77" width="7" height="7" fill="#74AA63"/>
-    <rect x="41" y="77" width="7" height="7" fill="#74AA63"/>
-    <rect x="48" y="77" width="7" height="7" fill="#74AA63"/>
-    <rect x="55" y="77" width="7" height="7" fill="#FFDAB9"/>
-    <rect x="13" y="84" width="7" height="7" fill="#74AA63"/>
-    <rect x="20" y="84" width="7" height="7" fill="#74AA63"/>
-    <rect x="27" y="84" width="7" height="7" fill="#74AA63"/>
-    <rect x="34" y="84" width="7" height="7" fill="#74AA63"/>
-    <rect x="41" y="84" width="7" height="7" fill="#74AA63"/>
-    <rect x="48" y="84" width="7" height="7" fill="#74AA63"/>
-    <!-- Legs -->
-    <rect x="16" y="91" width="7" height="7" fill="#444"/>
-    <rect x="23" y="91" width="7" height="7" fill="#444"/>
-    <rect x="37" y="91" width="7" height="7" fill="#444"/>
-    <rect x="44" y="91" width="7" height="7" fill="#444"/>
-  </g>
+  <!-- ═══ Wordmark + tagline ═══ -->
+  <text x="320" y="50" text-anchor="middle" fill="url(#spectrum)" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="36" font-weight="700" letter-spacing="3">Prism</text>
+  <text x="320" y="73" text-anchor="middle" font-family="monospace" font-size="11"><tspan fill="#4a9eda">Claude</tspan><tspan fill="#888"> × </tspan><tspan fill="#74aa63">GPT</tspan></text>
+  <text x="320" y="88" text-anchor="middle" fill="#aaa" font-family="monospace" font-size="8.5" letter-spacing="1">speed × rigor</text>
 </svg>
