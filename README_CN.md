@@ -127,6 +127,15 @@ bash tools/install_prism.sh /path/to/your/project --with-wiki /path/to/wiki
 
 知识库是**可选的**——所有技能不依赖它也能跑——但一旦项目里有了 `research-wiki/`，流水线会自动识别并开始向它喂数据。
 
+**难啃的 PDF（可选）。** 数字版 PDF 由 agent 自带的多模态 Read 工具直接读，零依赖。但对难啃的情况（扫描版判决书、多栏排版、表格/公式密集页），agent 直读容易乱序或丢表格——Prism 提供一个*可选*的 [MinerU](https://github.com/opendatalab/MinerU) 桥接，先把 PDF 转成干净 Markdown：
+
+```bash
+python3 tools/pdf_extract.py --check                      # 检测是否装了 MinerU
+python3 tools/pdf_extract.py "judgment.pdf" --print       # PDF → 干净 Markdown
+```
+
+MinerU **不是** Prism 的依赖——没装时脚本会干净回落，零依赖内核不受影响。需要时再装：`pip install mineru`。
+
 ## 🛠️ 安装
 
 推荐方式（项目级软链接）：

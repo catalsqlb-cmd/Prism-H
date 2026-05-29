@@ -112,6 +112,33 @@ Other skills (`/research-lit`, `/semantic-scholar`, `/exa-search`) call the same
 their own last step — they don't re-route through `/research-wiki
 ingest` as a subcommand, so they don't need an LLM roundtrip.
 
+#### Local PDF ingest (born-digital vs. hard PDFs)
+
+For a paper you have as a **local PDF** (no arXiv/venue metadata to fetch),
+the default path is to **read the PDF with the agent's own multimodal Read
+tool** and supply `--title/--authors/--year/--venue/--thesis` to
+`ingest_paper`. This needs no dependencies and works for born-digital text.
+
+For the **hard cases** — scanned court judgments, multi-column legal/academic
+layouts, table-dense pages, formula-heavy text — agent-native reading can
+mis-order columns or drop tables. Prism ships an **optional** bridge to
+[MinerU](https://github.com/opendatalab/MinerU) that converts such PDFs to
+clean Markdown first:
+
+```bash
+# Probe once; exit 3 means MinerU is not installed -> just read the PDF natively.
+python3 tools/pdf_extract.py --check
+
+# Convert a hard PDF to Markdown, then read that .md instead of the raw PDF.
+python3 tools/pdf_extract.py "path/to/judgment.pdf" --print > /tmp/judgment.md
+```
+
+MinerU is **not** a Prism dependency. The script falls back cleanly (exit
+code 3) when it is absent, so the zero-dependency core is untouched. Install
+only if you need it: `pip install mineru`. Use it selectively for scanned /
+multi-column / table- or formula-heavy PDFs — for ordinary born-digital
+papers, native reading is faster and good enough.
+
 ### `/research-wiki sync — arxiv-ids <id1>,<id2>,...`
 
 Batch backfill: ingest one or more arXiv IDs that were read earlier

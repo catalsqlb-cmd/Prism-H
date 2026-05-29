@@ -125,6 +125,15 @@ bash tools/install_prism.sh /path/to/your/project --with-wiki /path/to/wiki
 
 The wiki is **optional** — every skill works without it — but once `research-wiki/` exists in a project, the pipeline detects it and starts feeding it automatically.
 
+**Hard PDFs (optional).** Born-digital PDFs are read by the agent's own multimodal Read tool — no dependency needed. For the hard cases (scanned court judgments, multi-column layouts, table- or formula-heavy pages), Prism ships an *optional* bridge to [MinerU](https://github.com/opendatalab/MinerU) that converts a PDF to clean Markdown first:
+
+```bash
+python3 tools/pdf_extract.py --check                      # is MinerU installed?
+python3 tools/pdf_extract.py "judgment.pdf" --print       # PDF -> clean Markdown
+```
+
+MinerU is **not** a Prism dependency — the script falls back cleanly when it is absent, so the zero-dependency core is untouched. Install only if you need it: `pip install mineru`.
+
 ## 🛠️ Installation
 
 Recommended (project-local symlinks):
