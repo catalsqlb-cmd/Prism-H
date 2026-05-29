@@ -68,6 +68,7 @@ PRISM 识别 → /research-lit → 研究问题拟定 → 发展证据 → /rese
 
 - **发展证据** 指各学科所要求的形态：带实证法/案例/规则的法律争点图与比较矩阵；带反驳/回应图的论证重构；带分析框架的史料语料库；或带分析撰写的数据集 / 问卷 / 访谈 / 编码方案。
 - **质量闸门**（默认仅作建议，`strict` 下为阻断）：法学用 `statute-case-mapper` / `comparative-law` / `argument-stress-test` / `citation-audit`；形式逻辑用 `proof-checker` / `formula-derivation`；论证型工作用 `argument-stress-test`；实证社科用 `paper-claim-audit`。
+- **确定性预检**：`tools/text_review.py` 是一个不依赖模型的正则 lint（21 条规则——模糊/未来年份引用、过度断言、术语漂移，以及论证逻辑系列：只论不证、只证不论、引文后无分析、强度词无支撑）。在模型评审前先跑一遍，把跨模型评审的算力留给实质问题，而非格式卫生。
 
 ## 🧩 支线
 
@@ -96,6 +97,8 @@ bash tools/install_prism.sh /path/to/your/project --with-wiki /path/to/wiki
 ## 📝 引注体例
 
 Prism-H 内置了人文社科作者真正会投的体例路由：中文法学与社科期刊用脚注/尾注，美国法用 Bluebook，英国/欧盟法用 OSCOLA，社会科学用 APA，人文学科用 Chicago。法律引注精确到条/款/项、含完整案号、CAS 裁决用标准格式。详见 [`citation-cn-footnote.md`](skills/shared-references/citation-cn-footnote.md) 与 [`citation-discipline.md`](skills/shared-references/citation-discipline.md)。
+
+英文摘要与标题英译时，可查中英理论术语对照表 [`theory-terminology.md`](skills/shared-references/theory-terminology.md)：覆盖人文理论经典术语，并增补法学 / 体育法 / 道德与政治哲学，确保全文一个概念只用一个译名。
 
 ## 🔑 核心规则
 

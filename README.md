@@ -68,6 +68,7 @@ PRISM detect → /research-lit → research-question formulation → develop evi
 
 - **Develop evidence** means what the discipline calls for: a legal issue map with statutes/cases/rules and a comparative matrix; an argument reconstruction with an objection/response map; a source corpus with an analytical framework; or a dataset / survey / interview / coding protocol with an analysis write-up.
 - **Quality gates** (advisory by default, blocking under `strict`): `statute-case-mapper` / `comparative-law` / `argument-stress-test` / `citation-audit` for law; `proof-checker` / `formula-derivation` for formal logic; `argument-stress-test` for argumentative work; `paper-claim-audit` for empirical social science.
+- **Deterministic pre-check**: `tools/text_review.py` is a model-free lint (21 rules — vague/future-dated citations, over-assertion, terminology drift, and an argument-logic series: assert-without-argue, list-without-advance, quotation-without-analysis, unsupported intensifiers). Run it before the model passes so the cross-model review spends its budget on substance, not hygiene.
 
 ## 🧩 Side Tracks
 
@@ -96,6 +97,8 @@ Each skill is symlinked into `<project>/.claude/skills/<skill-name>`; a manifest
 ## 📝 Citation Styles
 
 Prism-H ships citation routing for the venues humanities & social-science authors actually target: footnote/endnote (脚注/尾注) for Chinese law and social-science journals, Bluebook (US law), OSCOLA (UK/EU law), APA (social sciences), and Chicago (humanities). Legal citations resolve to article/paragraph/item, full case numbers, and standard CAS-award format. See [`citation-cn-footnote.md`](skills/shared-references/citation-cn-footnote.md) and [`citation-discipline.md`](skills/shared-references/citation-discipline.md).
+
+For English abstracts and titles, a ZH↔EN theory-term glossary ([`theory-terminology.md`](skills/shared-references/theory-terminology.md)) supplies standard renderings for the humanities theory canon plus law / sports-law / moral & political philosophy, keeping one concept → one term across the paper.
 
 ## 🔑 Key Rules
 
