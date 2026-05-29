@@ -12,6 +12,10 @@
 >
 > *💡 Prism-H 是一套方法论，不是一个平台。把工作流带到你想去的任何地方。* 🌱
 
+**Prism**（Pipeline for Research with Intelligent Subject Mapping）是一个**学科感知、用户主导**的全流程学术研究管线，并继承了 [Karpathy 的 wiki 知识库](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)——是一个集成了文献管理的科研助手。它像棱镜分光一样，把一个模糊的研究方向，折射为**学科专属**的方法论、文献源、评审标准与论文结构。
+
+受 ARIS 启发，但 Prism 主要解决一个问题：**不同学科，不能套用同一套 AI 写作流程。** 所以它做的是「学科感知」——输入 `/prism-pipeline "你的方向"`，自动判断学科，切换方法论 + 资料路径。
+
 Prism-H 是 [Prism](https://github.com/catalsqlb-cmd/Prism) 的人文社科专版。它保留了「文献 → 研究问题 → 证据 → 评审 → 成稿」的研究生命周期与跨模型评审闭环，但移除了所有与计算实验相关的部分（GPU 跑实验、机器学习选题自动化、专利撰写）。剩下的全部针对**教义学、论证型、质性以及实证社科研究**做了调校。
 
 这些技能编排**跨模型协作**：Claude Code 负责推进研究，外部 LLM（经 [Codex MCP](https://github.com/openai/codex)）担任批判性评审 —— **速度 × 严谨**。

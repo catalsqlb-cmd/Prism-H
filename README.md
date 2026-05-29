@@ -12,6 +12,10 @@
 >
 > *💡 Prism-H is a methodology, not a platform. Take the workflow wherever you go.* 🌱
 
+**Prism** (Pipeline for Research with Intelligent Subject Mapping) is a **discipline-aware, user-driven** end-to-end research pipeline that inherits [Karpathy's wiki knowledge base](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) — a research assistant with literature management built in. Like a prism splitting light, it refracts a fuzzy research direction into **discipline-specific** methodology, literature sources, review standards, and paper structure.
+
+Inspired by ARIS, but Prism solves one problem in particular: **different disciplines cannot share one AI writing flow.** So what it does is *discipline awareness* — type `/prism-pipeline "your direction"` and it auto-detects the discipline, then switches methodology + source paths accordingly.
+
 Prism-H is the humanities & social-science edition of [Prism](https://github.com/catalsqlb-cmd/Prism). It keeps the literature → research-question → evidence → review → paper lifecycle and the cross-model review loop, but drops everything tied to computational experiments (GPU runs, ML idea automation, patent drafting). What remains is tuned for **doctrinal, argumentative, qualitative, and empirical social-science scholarship**.
 
 These skills orchestrate **cross-model collaboration**: Claude Code drives the research while an external LLM (via [Codex MCP](https://github.com/openai/codex)) acts as a critical reviewer — **speed × rigor**.
