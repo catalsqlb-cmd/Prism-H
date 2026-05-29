@@ -112,6 +112,10 @@ For English abstracts and titles, a ZH↔EN theory-term glossary ([`theory-termi
 - **No fabricated evidence** — claims must trace to grounded sources, cases, data, or valid arguments.
 - **Cross-model review** — the executor and the reviewer are different models, so the reviewer probes blind spots the executor can't see.
 
+## 💬 Contact
+
+Questions, ideas, or collaboration — reach me on WeChat: **Qinboboaoao**.
+
 ## 📄 License
 
 MIT. Forked from [Prism](https://github.com/catalsqlb-cmd/Prism) and trimmed to the humanities & social sciences.
