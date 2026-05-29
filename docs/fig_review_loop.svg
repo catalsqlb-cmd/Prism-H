@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 240">
+  <defs>
+    <marker id="arrb" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,1 L8,5 L0,9 Z" fill="#4a9eda"/>
+    </marker>
+    <marker id="arrg" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,1 L8,5 L0,9 Z" fill="#74aa63"/>
+    </marker>
+  </defs>
+  <rect width="900" height="240" fill="#fafbfc" rx="10"/>
+
+  <g font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif">
+    <!-- Executor card (Claude) -->
+    <rect x="60" y="56" width="250" height="128" rx="12" fill="#4a9eda" fill-opacity="0.10" stroke="#4a9eda" stroke-width="2"/>
+    <text x="185" y="86"  text-anchor="middle" fill="#2b2b2b" font-size="19" font-weight="700">Executor</text>
+    <text x="185" y="105" text-anchor="middle" fill="#4a9eda" font-family="monospace" font-size="11">Claude · Codex</text>
+    <text x="185" y="130" text-anchor="middle" fill="#555" font-size="11">surveys literature</text>
+    <text x="185" y="148" text-anchor="middle" fill="#555" font-size="11">develops evidence</text>
+    <text x="185" y="166" text-anchor="middle" fill="#555" font-size="11">drafts the paper</text>
+
+    <!-- Reviewer card (GPT) -->
+    <rect x="590" y="56" width="250" height="128" rx="12" fill="#74aa63" fill-opacity="0.10" stroke="#74aa63" stroke-width="2"/>
+    <text x="715" y="86"  text-anchor="middle" fill="#2b2b2b" font-size="19" font-weight="700">Reviewer</text>
+    <text x="715" y="105" text-anchor="middle" fill="#74aa63" font-family="monospace" font-size="11">GPT · Gemini · GLM</text>
+    <text x="715" y="130" text-anchor="middle" fill="#555" font-size="11">critiques &amp; scores</text>
+    <text x="715" y="148" text-anchor="middle" fill="#555" font-size="11">demands revisions</text>
+    <text x="715" y="166" text-anchor="middle" fill="#555" font-size="11">probes blind spots</text>
+
+    <!-- top arrow: executor -> reviewer -->
+    <path d="M312,98 C420,72 480,72 588,98" fill="none" stroke="#4a9eda" stroke-width="2.2" marker-end="url(#arrb)"/>
+    <text x="450" y="74" text-anchor="middle" fill="#888" font-size="11">thesis · claims · draft  (file paths only)</text>
+
+    <!-- bottom arrow: reviewer -> executor -->
+    <path d="M588,144 C480,170 420,170 312,144" fill="none" stroke="#74aa63" stroke-width="2.2" marker-end="url(#arrg)"/>
+    <text x="450" y="184" text-anchor="middle" fill="#888" font-size="11">critique · score · required revisions</text>
+
+    <!-- center note -->
+    <text x="450" y="124" text-anchor="middle" fill="#aab2ba" font-family="monospace" font-size="10">different model families</text>
+
+    <!-- tagline -->
+    <text x="450" y="222" text-anchor="middle" font-family="monospace" font-size="14"><tspan fill="#4a9eda">speed</tspan><tspan fill="#888"> × </tspan><tspan fill="#74aa63">rigor</tspan></text>
+  </g>
+</svg>

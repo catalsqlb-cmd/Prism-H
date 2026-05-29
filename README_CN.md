@@ -16,9 +16,13 @@ Prism-H 是 [Prism](https://github.com/catalsqlb-cmd/Prism) 的人文社科专�
 
 这些技能编排**跨模型协作**：Claude Code 负责推进研究，外部 LLM（经 [Codex MCP](https://github.com/openai/codex)）担任批判性评审 —— **速度 × 严谨**。
 
+![跨模型评审闭环](docs/fig_review_loop.svg)
+
 ## 🎓 支持的学科
 
 PRISM 自动识别会写出一份 `PRISM_PROFILE.md`，据此为每个学科适配文献来源、证据标准、论文结构、引注体例与评审维度：
+
+![学科分光识别](docs/fig_disciplines.svg)
 
 | ID | 学科 |
 |----|------|
@@ -61,6 +65,8 @@ PRISM 自动识别会写出一份 `PRISM_PROFILE.md`，据此为每个学科适�
 ```
 
 ## 🔁 流水线
+
+![流水线](docs/fig_pipeline.svg)
 
 ```
 PRISM 识别 → /research-lit → 研究问题拟定 → 发展证据 → /research-review → /paper-writing（可选）

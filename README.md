@@ -16,9 +16,13 @@ Prism-H is the humanities & social-science edition of [Prism](https://github.com
 
 These skills orchestrate **cross-model collaboration**: Claude Code drives the research while an external LLM (via [Codex MCP](https://github.com/openai/codex)) acts as a critical reviewer — **speed × rigor**.
 
+![Cross-model review loop](docs/fig_review_loop.svg)
+
 ## 🎓 Supported Disciplines
 
 PRISM auto-detection writes a `PRISM_PROFILE.md` that adapts literature sources, evidence standards, paper structure, citation style, and review dimensions per discipline:
+
+![Discipline detection](docs/fig_disciplines.svg)
 
 | ID | Discipline |
 |----|------------|
@@ -61,6 +65,8 @@ PRISM auto-detection writes a `PRISM_PROFILE.md` that adapts literature sources,
 ```
 
 ## 🔁 The Pipeline
+
+![Pipeline](docs/fig_pipeline.svg)
 
 ```
 PRISM detect → /research-lit → research-question formulation → develop evidence → /research-review → /paper-writing (optional)
