@@ -1,0 +1,12 @@
+{
+  "id": "claim-unsupported-01",
+  "audit_skill": "paper-claim-audit",
+  "gold_label": "problem",
+  "category": "unsupported-by-results",
+  "input": {
+    "claim": "Our method achieves state-of-the-art accuracy on ImageNet.",
+    "evidence_in_paper": "Table 3 reports 76.1% top-1 accuracy. The cited prior SOTA (Liu et al., 2023) reports 84.3% on the same split.",
+    "section": "Abstract"
+  },
+  "rationale": "The paper's own Table 3 (76.1%) is below the prior SOTA (84.3%), so the SOTA claim is contradicted by reported results. A correct audit must FLAG this."
+}

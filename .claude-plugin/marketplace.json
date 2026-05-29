@@ -1,0 +1,21 @@
+{
+  "name": "prism-h",
+  "owner": {
+    "name": "catalsqlb-cmd",
+    "email": "catalsqlb@gmail.com"
+  },
+  "metadata": {
+    "description": "Prism-H — humanities & social-science research pipeline for Claude Code.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "prism-h",
+      "source": "./",
+      "description": "Humanities & social-science research pipeline: literature review, research-question formulation, evidence development (statutes, cases, sources, arguments), discipline-aware multi-model review, submission-grade citation audits, and a portable LLM-Wiki knowledge base.",
+      "version": "0.1.0",
+      "category": "research",
+      "tags": ["research", "humanities", "social-science", "law", "paper-writing", "citation-audit"]
+    }
+  ]
+}

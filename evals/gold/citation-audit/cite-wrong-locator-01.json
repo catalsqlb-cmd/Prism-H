@@ -1,0 +1,13 @@
+{
+  "id": "cite-wrong-locator-01",
+  "audit_skill": "citation-audit",
+  "gold_label": "problem",
+  "category": "wrong-locator",
+  "input": {
+    "claim": "Transformer training compute has grown 10x per year since 2018.",
+    "citation": "Sevilla et al., 2022, 'Compute Trends Across Three Eras of Machine Learning'",
+    "locator": "Table 2",
+    "source_excerpt": "Table 2 reports a doubling time of roughly 6 months for the Deep Learning era, i.e. about 4x per year, not 10x."
+  },
+  "rationale": "The cited table gives ~4x/year; the claim's 10x/year is not supported by the locator. A correct audit must FLAG this."
+}

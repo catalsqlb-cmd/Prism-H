@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "prism-h",
+  "displayName": "Prism-H",
+  "version": "0.1.0",
+  "description": "Humanities & social-science research pipeline for Claude Code: from literature review through research-question formulation, evidence development (statutes, cases, sources, arguments), discipline-aware multi-model review, and submission-grade citation audits. Covers law, philosophy, logic, economics, social sciences, education, management, communications, and the humanities. Includes a portable LLM-Wiki personal knowledge base.",
+  "author": {
+    "name": "catalsqlb-cmd",
+    "email": "catalsqlb@gmail.com",
+    "url": "https://github.com/catalsqlb-cmd"
+  },
+  "homepage": "https://github.com/catalsqlb-cmd/Prism-H",
+  "repository": "https://github.com/catalsqlb-cmd/Prism-H",
+  "license": "MIT",
+  "keywords": [
+    "research",
+    "humanities",
+    "social-science",
+    "law",
+    "philosophy",
+    "paper-writing",
+    "literature-review",
+    "citation-audit",
+    "knowledge-base",
+    "llm-wiki"
+  ]
+}

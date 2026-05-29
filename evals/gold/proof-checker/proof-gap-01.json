@@ -1,0 +1,12 @@
+{
+  "id": "proof-gap-01",
+  "audit_skill": "proof-checker",
+  "gold_label": "problem",
+  "category": "unjustified-step",
+  "input": {
+    "theorem": "For any convex function f and any x, y: f((x+y)/2) <= (f(x)+f(y))/2.",
+    "proof": "Since f is convex, it is differentiable everywhere, so by the mean value theorem f((x+y)/2) = (f(x)+f(y))/2. QED.",
+    "domain": "real analysis"
+  },
+  "rationale": "Convex functions need not be differentiable everywhere, and the MVT step is both false and unrelated to Jensen's inequality. The proof has an unjustified/incorrect step. A correct audit must FLAG this."
+}

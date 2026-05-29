@@ -1,0 +1,13 @@
+{
+  "id": "arg-sound-01",
+  "audit_skill": "argument-stress-test",
+  "gold_label": "clean",
+  "category": "sound",
+  "input": {
+    "claim": "CAS 裁决对中国法院不具有当然的拘束力，仅在当事人通过仲裁协议约定或符合承认与执行条件时方产生效力。",
+    "claim_type": "descriptive-law",
+    "stated_authority": "《纽约公约》及《民事诉讼法》关于外国仲裁裁决承认与执行的规定",
+    "context": "正确区分了 CAS 裁决的仲裁/约定属性，未将其当作当然拘束的判例。"
+  },
+  "rationale": "正确刻画了 CAS 裁决的权威状态（仲裁性、需经承认执行），锚定于正确的成文法依据，无规则层级或 policy-as-law 问题。正确的审计必须 PASS。"
+}

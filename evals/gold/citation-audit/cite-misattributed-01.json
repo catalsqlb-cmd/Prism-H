@@ -1,0 +1,13 @@
+{
+  "id": "cite-misattributed-01",
+  "audit_skill": "citation-audit",
+  "gold_label": "problem",
+  "category": "misattribution",
+  "input": {
+    "claim": "Batch normalization was first introduced to stabilize GAN training.",
+    "citation": "Ioffe & Szegedy, 2015, 'Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift'",
+    "locator": "Section 1",
+    "source_excerpt": "We refer to this phenomenon as internal covariate shift, and address it by normalizing layer inputs... applied to image classification."
+  },
+  "rationale": "The cited paper introduces BN for covariate shift in image classification, not GAN training. The claim misattributes the motivation. A correct audit must FLAG this."
+}

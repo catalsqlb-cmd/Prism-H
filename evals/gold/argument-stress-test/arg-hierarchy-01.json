@@ -1,0 +1,13 @@
+{
+  "id": "arg-hierarchy-01",
+  "audit_skill": "argument-stress-test",
+  "gold_label": "problem",
+  "category": "rule-hierarchy",
+  "input": {
+    "claim": "依据某单项体育协会的纪律规则，可以排除《体育法》关于运动员申诉权的强制性规定。",
+    "claim_type": "interpretive",
+    "stated_authority": "某协会纪律规则第X条",
+    "context": "用协会内部规则对抗上位法的强制性规定。"
+  },
+  "rationale": "违反规则层级：协会规则不能排除上位成文法的强制性规定。正确的审计必须 FLAG（rule-hierarchy）。"
+}

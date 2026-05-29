@@ -1,0 +1,13 @@
+{
+  "id": "cite-supported-01",
+  "audit_skill": "citation-audit",
+  "gold_label": "clean",
+  "category": "supported",
+  "input": {
+    "claim": "Dropout reduces overfitting by randomly zeroing units during training.",
+    "citation": "Srivastava et al., 2014, 'Dropout: A Simple Way to Prevent Neural Networks from Overfitting'",
+    "locator": "Abstract",
+    "source_excerpt": "The key idea is to randomly drop units (along with their connections) from the neural network during training. This prevents units from co-adapting too much and significantly reduces overfitting."
+  },
+  "rationale": "The claim is directly supported by the cited abstract. A correct audit must PASS this."
+}

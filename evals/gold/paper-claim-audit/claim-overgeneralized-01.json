@@ -1,0 +1,12 @@
+{
+  "id": "claim-overgeneralized-01",
+  "audit_skill": "paper-claim-audit",
+  "gold_label": "problem",
+  "category": "overgeneralization",
+  "input": {
+    "claim": "Our approach works across all modalities.",
+    "evidence_in_paper": "Experiments cover text classification (Section 4.1) and image classification (Section 4.2) only. No audio, video, tabular, or multimodal experiments are reported.",
+    "section": "Conclusion"
+  },
+  "rationale": "Evidence spans two modalities; 'all modalities' overgeneralizes well beyond what is shown. A correct audit must FLAG this."
+}

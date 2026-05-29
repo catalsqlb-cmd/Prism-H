@@ -1,0 +1,12 @@
+{
+  "id": "proof-valid-01",
+  "audit_skill": "proof-checker",
+  "gold_label": "clean",
+  "category": "valid",
+  "input": {
+    "theorem": "The sum of the first n positive integers is n(n+1)/2.",
+    "proof": "By induction on n. Base case n=1: 1 = 1*2/2 = 1. Inductive step: assume sum_{i=1}^{k} i = k(k+1)/2. Then sum_{i=1}^{k+1} i = k(k+1)/2 + (k+1) = (k+1)(k+2)/2, which is the formula for n=k+1. QED.",
+    "domain": "discrete mathematics"
+  },
+  "rationale": "Standard, correct induction with valid base case and inductive step. A correct audit must PASS this."
+}

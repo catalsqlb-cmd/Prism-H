@@ -1,0 +1,12 @@
+{
+  "id": "claim-supported-01",
+  "audit_skill": "paper-claim-audit",
+  "gold_label": "clean",
+  "category": "supported-by-results",
+  "input": {
+    "claim": "Our method improves top-1 accuracy by 2.1 points over the baseline on CIFAR-100.",
+    "evidence_in_paper": "Table 2: baseline 74.3%, ours 76.4% on CIFAR-100 (same backbone, same training budget, 3-seed mean, ±0.3).",
+    "section": "Section 4.2"
+  },
+  "rationale": "The 2.1-point claim matches Table 2 (76.4 - 74.3 = 2.1) under matched conditions with variance reported. A correct audit must PASS this."
+}

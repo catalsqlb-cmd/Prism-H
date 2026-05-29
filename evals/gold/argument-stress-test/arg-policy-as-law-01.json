@@ -1,0 +1,13 @@
+{
+  "id": "arg-policy-as-law-01",
+  "audit_skill": "argument-stress-test",
+  "gold_label": "problem",
+  "category": "policy-as-law",
+  "input": {
+    "claim": "由于职业联赛的健康发展对社会有益，因此俱乐部对球员的转会限制当然合法有效。",
+    "claim_type": "normative",
+    "stated_authority": "none",
+    "context": "论证联赛转会规则的效力，未援引任何成文法、判例或竞争法分析。"
+  },
+  "rationale": "这是典型的 policy-as-law：从'有益'直接跳到'合法有效'，把政策可欲性当作法律权威，未经任何实证法或竞争法检验。正确的审计必须 FLAG。"
+}
