@@ -48,6 +48,8 @@ Parameters pass through workflow chains automatically.
 
 PRISM (Pipeline for Research with Intelligent Subject Mapping) auto-detects the research discipline and loads a methodology profile. Override with `— discipline: law`.
 
+![Discipline detection](docs/fig_disciplines.svg)
+
 | Discipline ID | Field | Methodology | Key Venues |
 |--------------|-------|-------------|------------|
 | `law` | Law / Legal Studies | Doctrinal + comparative + empirical | 法学研究, 中国法学, Harvard Law Review |
@@ -64,6 +66,8 @@ PRISM (Pipeline for Research with Intelligent Subject Mapping) auto-detects the 
 Profile files: `skills/shared-references/prism-profiles/{id}.md`
 
 ### Pipeline Stages
+
+![Pipeline](docs/fig_pipeline.svg)
 
 | Stage | Invoke | Input | Output | When to use |
 |-------|--------|-------|--------|-------------|
@@ -116,8 +120,10 @@ Skills communicate through plain-text files:
 
 ## Cross-Model Protocol
 
+![Cross-model review loop](docs/fig_review_loop.svg)
+
 - **Executor** (Claude/Codex): surveys literature, develops evidence, drafts papers
-- **Reviewer** (GPT-5.4/Gemini/GLM): critiques, scores, demands revisions
+- **Reviewer** (GPT/Gemini/GLM): critiques, scores, demands revisions
 - **Rule**: executor and reviewer must be different model families
 - **Reviewer independence**: pass file paths only, never summaries or interpretations
 - **No fabricated evidence**: claims must trace to grounded sources, cases, data, or valid arguments
