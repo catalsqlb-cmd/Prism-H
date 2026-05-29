@@ -84,6 +84,43 @@ PRISM detect → /research-lit → research-question formulation → develop evi
 - **Collaboration** — `/overleaf-sync` is a transport layer only.
 - **Memory** — `/research-wiki` and the portable [LLM-Wiki](skills/llm-wiki/) persist sources, arguments, and review outcomes.
 
+## 🧠 Knowledge Base — Memory That Compounds
+
+Most research workflows are amnesiac: every literature survey starts from zero, every claim is re-derived, every dead end is re-walked. Prism-H ships a persistent knowledge base — inspired by [Karpathy's LLM Wiki pattern](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) (*compile knowledge once, keep it current, don't re-derive on every query*) — so the system **gets smarter the longer you use it**.
+
+Two complementary stores, both plain Markdown, both Obsidian-compatible, both stdlib-only (no database):
+
+| | `/research-wiki` | `/llm-wiki` |
+|---|---|---|
+| **Scope** | One research project's lifecycle | General-purpose, cross-project |
+| **Models** | Paper · Idea · Experiment · Claim, linked by a typed graph (`extends`, `contradicts`, `supports`, `invalidates`, …) | Topics · Concepts · Sources · Memos |
+| **Use it for** | A living map of *this* paper's field, gaps, and evidence status | Durable domain knowledge, reading notes, distilled answers |
+
+**Why it matters for a long project (e.g. a dissertation):**
+
+- **Auto-ingest** — `/research-lit` files every source it finds into the wiki; nothing read is ever lost.
+- **Field map, not a file dump** — papers, ideas, and claims connect through a typed graph, so you can see what *extends*, *contradicts*, or *supports* what — and where the open gaps are (`gap_map.md`, stable IDs `G1, G2, …`).
+- **Compounding context** — `/research-refine` reads the wiki *before* formulating, then writes candidate questions back after. Each cycle inherits everything prior.
+- **Anti-repetition memory** — `/argument-stress-test` records claim status; weak or unsupported claims become memory so you don't re-argue a dead end.
+- **Trust tags** — every claim is tagged `已确认` / `有争议` / `推论` / `待核验`, so future reads know how much to trust each line. Unsourced claims are forced to `待核验`.
+
+**Get started:**
+
+```bash
+/research-wiki init                  # scaffold this project's research graph
+/research-wiki ingest "paper.pdf"    # add a paper (auto-extracts metadata + claims)
+/research-wiki query "doping due process"   # search the graph
+/research-wiki stats                 # papers / ideas / claims / gaps at a glance
+```
+
+Or wire a portable personal KB at install time:
+
+```bash
+bash tools/install_prism.sh /path/to/your/project --with-wiki /path/to/wiki
+```
+
+The wiki is **optional** — every skill works without it — but once `research-wiki/` exists in a project, the pipeline detects it and starts feeding it automatically.
+
 ## 🛠️ Installation
 
 Recommended (project-local symlinks):
