@@ -354,7 +354,23 @@ For example, avoid mixing:
 - training / learning / optimization
 - sample / instance / example
 
+In the humanities & social sciences the trap is theory terms with multiple
+Chinese renderings (规训/纪律, 话语/论述, 赤裸生命/裸命) and their English
+equivalents — pick one ZH term and one EN term per concept and keep both stable.
+Look standard renderings up in `theory-terminology.md`; the deterministic
+`T-01` check in `tools/text_review.py` flags mixed Chinese renderings.
+
 Choose the best term and keep it stable.
+
+### English Abstract & Title (translation)
+
+When translating a Chinese abstract/title for an international venue, rewrite
+rather than translate sentence-by-sentence — English academic abstracts favor
+"This article argues that…", "Drawing on X's concept of Y, this study…". Use the
+standard English rendering for every theory term (one concept → one English
+word, consistent with the body) from `theory-terminology.md`. For China-specific
+concepts with no settled English term, keep pinyin + a gloss, e.g.
+*qiyun (spirit resonance)*. Titles take the "Main Title: Subtitle" form, ≤ 15 words.
 
 ### Vocabulary Signaling
 

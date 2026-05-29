@@ -39,6 +39,24 @@ checklist. Fall back to the generic checklist below if no profile is present.
 
 ## Protocol
 
+### Step 0: Deterministic pre-check (cheap, model-free)
+
+Before spending a model pass on adversarial review, run the deterministic lint
+over the draft to clear the mechanical defects a model shouldn't have to babysit:
+
+```bash
+python tools/text_review.py <draft.md> --severity warning
+```
+
+It flags vague/fabricated citations (`R1-*`), over-assertion and unsupported
+intensifiers (`R3-01`, `L-08`), assert-without-argue and list-without-advance
+runs (`L-01`, `L-02`), quotation-without-analysis (`L-03`), unproven value-laden
+premises (`L-05`), and terminology inconsistency (`T-01`). These are deterministic
+proxies for the soundness defects this skill probes with a model — fixing them
+first means the cross-model pass spends its budget on substance, not hygiene.
+Exit code is non-zero if any `error`-level issue remains. Advisory by default;
+fold surviving `L-*`/`R-*` flags into the Step 1 claim table as starting suspicions.
+
 ### Step 1: Decompose the argument into claims
 
 Read the draft. Extract every **load-bearing normative claim** — a sentence that

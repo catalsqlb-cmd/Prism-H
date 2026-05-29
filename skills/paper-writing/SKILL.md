@@ -309,6 +309,25 @@ else:
     skip — no experimental results to verify
 ```
 
+### Phase 4.8: Prose Lint (deterministic, model-free)
+
+Before the model-driven improvement loop, run the deterministic text-review lint
+over the prose so the loop spends its review budget on substance, not hygiene:
+
+```bash
+python <PRISM_REPO>/tools/text_review.py paper/sections/*.md --severity warning
+```
+
+It catches the recurring humanities/social-science defects regex can decide:
+vague or future-dated citations (`R1-*`), over-assertion (`R3-01`), terminology
+inconsistency (`T-01`), GB/T 7714 / footnote / punctuation slips (`F-*`),
+register and self-reference drift (`S-*`), missing structural elements (`ST-*`),
+and the argument-logic flags (`L-*`: assert-without-argue, list-without-advance,
+quotation-without-analysis, unsupported intensifiers). Fix `error`-level issues
+before Phase 5; feed surviving `L-*` flags to `/research-refine` as targeted
+revision notes. Advisory unless `assurance: submission`, where unresolved
+`error`-level issues block the Final Report alongside the other gates.
+
 ### Phase 5: Auto Improvement Loop
 
 Invoke `/research-refine` to polish the paper:

@@ -130,6 +130,7 @@ Read these before invoking review-related skills:
 - `skills/shared-references/citation-discipline.md` — international citation rules
 - `skills/shared-references/citation-cn-footnote.md` — Chinese footnote/endnote rules
 - `skills/shared-references/writing-principles.md` — writing standards
+- `skills/shared-references/theory-terminology.md` — ZH↔EN theory-term glossary (abstract/title translation + `T-01` term-consistency)
 - `skills/shared-references/venue-checklists.md` — venue formatting
 - `skills/shared-references/prism-routing.md` — discipline detection and routing protocol
 - `skills/shared-references/prism-profiles/` — per-discipline methodology profiles (10 disciplines)

@@ -182,6 +182,21 @@ Invoke `/paper-compile` to build the PDF:
 Shall I proceed with the improvement loop?
 ```
 
+### Phase 4.8: Prose Lint (deterministic, model-free)
+
+Before the model-driven improvement loop, run the deterministic text-review lint
+so the loop spends its budget on substance, not hygiene:
+
+```bash
+python <PRISM_REPO>/tools/text_review.py paper/sections/*.md --severity warning
+```
+
+Catches vague/future-dated citations (`R1-*`), over-assertion (`R3-01`),
+terminology inconsistency (`T-01`), format slips (`F-*`), register drift (`S-*`),
+missing structure (`ST-*`), and argument-logic flags (`L-*`). Fix `error`-level
+issues before Phase 5; feed surviving `L-*` flags to `/research-refine` as
+revision notes. Advisory unless `assurance: submission`.
+
 ### Phase 5: Auto Improvement Loop
 
 Invoke `/research-refine` to polish the paper:
