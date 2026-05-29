@@ -768,5 +768,13 @@ if [[ -n "$WITH_WIKI" ]]; then
     fi
 fi
 
+# Optional tip: MinerU bridge for hard PDFs (not a dependency)
+if ! command -v mineru >/dev/null 2>&1 && ! command -v magic-pdf >/dev/null 2>&1; then
+    log ""
+    log "Tip (optional): for scanned / multi-column / table-heavy PDFs, install MinerU"
+    log "     pip install mineru   — then tools/pdf_extract.py yields clean Markdown."
+    log "     Born-digital PDFs need nothing; the agent reads them natively."
+fi
+
 # Cleanup
 rm -f "$UPSTREAM_FILE" "$MANIFEST_DATA" "$PLAN_FILE"

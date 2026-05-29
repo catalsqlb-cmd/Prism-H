@@ -151,6 +151,8 @@ If `research-wiki/` exists in the project:
 
 Initialize with `/research-wiki init`.
 
+**Local PDF ingest.** Born-digital PDFs: read with the agent's native Read tool, then pass metadata to `tools/research_wiki.py ingest_paper`. Hard PDFs (scanned / multi-column / table- or formula-heavy): run the optional MinerU bridge first — `python3 tools/pdf_extract.py --check` (exit 3 = not installed → fall back to native reading), then `python3 tools/pdf_extract.py <file.pdf> --print` to get clean Markdown. MinerU is **not** a Prism dependency; install only if needed (`pip install mineru`).
+
 ## Effort Levels
 
 | Level | Tokens | What changes |
